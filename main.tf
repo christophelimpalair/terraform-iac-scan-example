@@ -1,4 +1,5 @@
-# This code is PURPOSELY BADLY WRITTEN for educational purposes! Do not copy/paste this for any sort of production use, as this is bad security design
+# This code is PURPOSELY BADLY WRITTEN for educational purposes! 
+# Do not copy/paste this for any sort of production use, as this is bad security design
 provider "aws" {
   region = "us-west-1"
   access_key = "AKIAIOSFODNN7EXAMPLE" # Hardcoded credentials
