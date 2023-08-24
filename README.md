@@ -154,7 +154,6 @@ Then, in that directory, we need to set up a file named:
 touch __init__.py
 ```
 
-### Enforcing a specific VPC CIDR block
 In that file, we need to add the following: (go ahead and copy/paste this from the repo)
 
 ```sql
@@ -164,6 +163,7 @@ modules = glob.glob(join(dirname(__file__), "*.py"))
 __all__ = [ basename(f)[:-3] for f in modules if isfile(f) and not f.endswith('__init__.py')]
 ```
 
+### Enforcing a specific VPC CIDR block
 From there, we can add our custom checks by creating new files, like this: (in the custom_policies directory)
 
 ```sql
@@ -198,7 +198,7 @@ check = CustomVPCCIDRBlockCheck()
 
 This basic check will ensure that VPCs are using a CIDR block range within a specific range. In this particular example, we’re looking to make sure it starts with `10.0.`. 
 
-Let’s grab the `vpc.tf` file from the repository if you haven’t already, and let’s take a look at the CIDR block in that file.
+Let’s grab the `vpc.tf` file from this repository if you haven’t already, and let’s take a look at the CIDR block in that file.
 
 We can see that the VPC CIDR block range is configured as: `10.123.0.0/16` which should fail this check. Let’s see if it does!
 
